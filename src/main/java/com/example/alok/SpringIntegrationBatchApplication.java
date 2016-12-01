@@ -30,6 +30,7 @@ public class SpringIntegrationBatchApplication {
 	@Autowired
 	private JobRepository jobRepository;
 
+
 	@Bean
 	MessageSource<Object> jdbcMessageSource() {
 		return new JdbcPollingChannelAdapter(this.dataSource, "Select * from User WHERE firstName = 'Avinash' and Status = '0'");
